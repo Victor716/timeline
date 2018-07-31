@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>timeline plugin</title>
+		<link href="index.css" rel="stylesheet"/>
+		<link href="timeline.css" rel="stylesheet"/>
+		<script src="tool.js"></script>
+		<script src="timeline_es5.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="header">Timeline.js</div>
+		<div class="demo">
+			<div class="timeline" id="tl"></div>
+		</div>
+		<div class="bframe">
+			<button class="btn--victor left" onclick="addEvent()">Add Event</button>
+			<button class="btn--victor right" onclick="delEvent()">Remove Event</button>
+		</div>
+	</body>
+	<script>
+		var arr = [], 
+			n = 10, 
+			obj = { 
+				name: 'Installation',
+				time: '01/01 12:00', 
+				year: 2017 
+			};
+		for (var i = 0; i < n; i++) {
+			arr.push(obj); 
+		}
+		
+		var tl = new Timeline();
+		window.onload = function() { 
+			console.log("window onload");
+			tl.init("timeline", arr); 
+		}
+		
+		function addEvent() {
+			arr.push(obj);
+			tl.init("timeline", arr);
+		}
+		
+		function delEvent() {
+			if (arr.length > 1) {
+				arr.splice(arr.length - 1, 1);
+				tl.init("timeline", arr);
+			} else {
+				alert("到头了！");
+			}
+		}
+		
+	</script>
+</html>

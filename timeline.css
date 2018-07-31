@@ -1,0 +1,205 @@
+/* timeline */
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+div {
+	display: block;
+}
+  
+.timeline {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 120px;
+	overflow: auto;
+}
+
+.timeline-chart {
+	display: table;
+	position: relative;
+	width: 100%;
+	height: 120px;
+	overflow: hidden;
+	overflow: -moz-hidden-unscrollable;
+}
+
+.axis {
+	display: inline-block;
+	position: absolute;
+	width: 100%;
+	height: 63px;
+	left: 0px;
+	border-bottom: 5px solid #CCCCCC;
+}
+
+.head {
+	display:table-cell;
+	vertical-align: middle;
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	border: 4px solid #CCCCCC;
+	border-radius: 40px;
+	white-space: nowrap;
+	margin-top: 20px;
+	z-index: 2000;
+	color: #6BC30D;
+	font-size: 30px;
+	line-height: 75px;
+	text-align: center;
+	background-color: #FFFFFF;
+	-webkit-transition: all 0.05s linear;
+	-moz-transition: all 0.05s linear;
+	-o-transition: all 0.05s linear;
+	transition: all 0.05s linear;
+}
+
+.head:hover {
+	border: 4px solid #6BC30D;
+	background-color: #6BC30D;
+	color: #FFFFFF;
+	cursor: pointer;
+	-webkit-transition: all 0.05s linear;
+	-moz-transition: all 0.05s linear;
+	-o-transition: all 0.05s linear;
+	transition: all 0.05s linear;
+}
+
+.event {
+	position: absolute;
+	display: block;
+	height: 100%;
+	width: auto;
+	z-index: 2000;
+	left: 80px;
+	overflow: hidden;
+}
+
+.event  >  ul {
+	padding: 0;
+	margin: 0;
+	height: inherit;
+	overflow: hidden;
+	white-space: nowrap;
+	position: relative;
+}
+
+.event > ul > li {
+	display: inline-block;
+	position: relative;
+	height: inherit;
+	width: 100px;
+	padding: 0;
+	margin: 0;
+}
+
+.li-wrap {
+	display: block;
+	position: relative;
+}
+
+.li-wrap > div {
+	display: block;
+}
+
+.li-up,
+.li-down {
+	height: 40px;
+}
+
+.point {
+	height: 40px;
+}
+
+.dot {
+	position: relative;
+	width: 20px;
+	height: 20px;
+	left: 40px;
+	top: 10px;
+	border: 3px solid #6BC30D;
+	border-radius: 10px;
+	background-color: #ffffff;
+	-webkit-transition: all 0.05s linear;
+	-moz-transition: all 0.05s linear;
+	-o-transition: all 0.05s linear;
+	transition: all 0.05s linear;
+}
+
+.refer {
+	display: block;
+	position: absolute;
+	left: 48px;
+	top: 25px;
+	color: #CCCCCC;
+	visibility: hidden;
+	-webkit-transition: all 0.05s linear;
+	-moz-transition: all 0.05s linear;
+	-o-transition: all 0.05s linear;
+	transition: all 0.05s linear;
+}
+
+.li-wrap:hover {
+	cursor: pointer;
+}
+
+.li-wrap:hover .point > .dot {
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	left: 35px;
+	top: 5px;
+	border: 6px solid #6BC30D;
+	border-radius: 15px;
+	-webkit-transition: all 0.05s linear;
+	-moz-transition: all 0.05s linear;
+	-o-transition: all 0.05s linear;
+	transition: all 0.05s linear;
+}
+
+.li-wrap:hover .point > .refer {
+	visibility: visible;
+	-webkit-transition: all 0.05s linear;
+	-moz-transition: all 0.05s linear;
+	-o-transition: all 0.05s linear;
+	transition: all 0.05s linear;
+}
+
+.li-wrap:hover .event-title {
+	padding-top: 0px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #8C8C8C;
+	-webkit-transition: all 0.05s linear;
+	-moz-transition: all 0.05s linear;
+	-o-transition: all 0.05s linear;
+	transition: all 0.05s linear;
+}
+
+.li-wrap:hover .li-down > .li-date {
+	font-weight: bold;
+	-webkit-transition: all 0.05s linear;
+	-moz-transition: all 0.05s linear;
+	-o-transition: all 0.05s linear;
+	transition: all 0.05s linear;
+}
+
+.event-title {
+	padding-top: 30px;
+	color: #CCCCCC;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	-webkit-transition: all 0.05s linear;
+	-moz-transition: all 0.05s linear;
+	-o-transition: all 0.05s linear;
+	transition: all 0.05s linear;
+}
+
+.li-date {
+	text-align: center;
+	color: #8C8C8C;
+}
